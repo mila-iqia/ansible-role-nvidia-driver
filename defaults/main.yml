@@ -5,6 +5,7 @@ nvidia_driver_skip_reboot: no
 nvidia_driver_module_file: /etc/modprobe.d/nvidia.conf
 nvidia_driver_module_params: ''
 nvidia_driver_add_repos: yes
+nvidia_configure_repos: false
 nvidia_driver_branch: "580"
 
 
