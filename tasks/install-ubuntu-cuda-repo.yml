@@ -18,6 +18,13 @@
   environment: "{{proxy_env if proxy_env is defined else {}}}"
   when: nvidia_driver_add_repos | bool
 
+- name: Configure Nvidia repository
+  ansible.builtin.copy:
+    content: "{{ nvidia_apt_repository }}\n"
+    dest: /etc/apt/sources.list.d/nvidia.list
+    mode: 0644
+  when: nvidia_configure_repos | bool
+
 - name: force an apt update
   apt:
     update_cache: true
