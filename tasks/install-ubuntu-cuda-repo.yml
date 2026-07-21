@@ -42,7 +42,7 @@
 
 - name: install driver packages
   apt:
-    name: "nvidia-driver-{{ nvidia_driver_branch }}-server-open={{ nvidia_driver_package_version }}"
+    name: "nvidia-driver-{{ nvidia_driver_branch }}-server-open"
     state: "{{ nvidia_driver_package_state }}"
     autoremove: "{{ nvidia_driver_package_state == 'absent' }}"
     purge: "{{ nvidia_driver_package_state == 'absent' }}"
